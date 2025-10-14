@@ -31,16 +31,20 @@
         {% endblock %}
     </head>
 
-    <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
+    
+    <div class="bg-gray-900 text-white min-h-screen">
+      <body class="{% block body_class %}{% endblock %}">
+          {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+          {% block content %}{% endblock %}
 
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
+          {# Global javascript #}
+          <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
 
-        {% block extra_js %}
-        {# Override this in templates to add extra javascript #}
-        {% endblock %}
-    </body>
+          {% block extra_js %}
+          {# Override this in templates to add extra javascript #}
+          <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+          {% endblock %}
+      </body>
+    </div>
 </html>
