@@ -28,10 +28,23 @@
     {% for post in blogpages %}
         <div class="flex flex-row gap-4">
             <div class="w-[1px] bg-green-500"></div>
-            <a href="{% pageurl post %}" class="flex flex-col gap-2 flex-1 hover:opacity-50">
-                <h2 class="font-sans text-2xl font-medium italic">{{ post.title }}</h2>
-                <p class="font-sans text-xl font-light tracking-wide">{{ post.specific.intro }}</p>
-            </a>
+            <div class="flex flex-col gap-2 flex-1 group">
+                <div class="flex justify-between items-center gap-4">
+                    <a href="{% pageurl post %}" class="group-hover:text-green-500 transition-colors">
+                        <h2 class="font-sans text-2xl font-medium italic">{{ post.title }}</h2>
+                    </a>
+                    {% if post.specific.tags.all %}
+                        <div class="flex gap-2">
+                            {% for tag in post.specific.tags.all %}
+                                <a href="{{ page.url }}?tag={{ tag }}" class="px-2 py-0.5 rounded-md border border-green-500 text-green-500 hover:bg-green-500 hover:text-gray-900 text-xs transition-colors">{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <a href="{% pageurl post %}" class="group-hover:text-green-500 transition-colors">
+                    <p class="font-sans text-xl font-light tracking-wide">{{ post.specific.intro }}</p>
+                </a>
+            </div>
         </div>
     {% endfor %}
     </div>
