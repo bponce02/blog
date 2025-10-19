@@ -1,0 +1,110 @@
+.rich-text h1 {
+    font-size: 2.25em;
+    font-weight: 600;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+.rich-text h2 {
+    font-size: 1.875em;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+.rich-text h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+}
+.rich-text p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.rich-text ul {
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 2em;
+}
+.rich-text ol {
+    list-style-type: decimal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 2em;
+}
+.rich-text li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.rich-text table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.rich-text thead {
+    border-bottom: 2px solid #22c55e;
+}
+.rich-text th {
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75em;
+    border: 1px solid #22c55e;
+}
+.rich-text td {
+    padding: 0.75em;
+    border: 1px solid #4b5563;
+}
+.rich-text tbody tr {
+    border-bottom: 1px solid #374151;
+}
+.rich-text strong, .rich-text b {
+    font-weight: 600;
+    color: #fff;
+}
+.rich-text a {
+    color: #22c55e;
+    text-decoration: none;
+}
+.rich-text a:hover {
+    text-decoration: underline;
+}
+.rich-text code {
+    background-color: #1f2937;
+    color: #86efac;
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+}
+.rich-text pre {
+    background-color: #1f2937;
+    padding: 1em;
+    border-radius: 0.375rem;
+    overflow-x: auto;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+.rich-text pre code {
+    background-color: transparent;
+    padding: 0;
+}
+.rich-text blockquote {
+    border-left: 4px solid #22c55e;
+    padding-left: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-style: italic;
+    color: #d1d5db;
+}
+.rich-text img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+.rich-text hr {
+    border: 0;
+    border-top: 1px solid #374151;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}

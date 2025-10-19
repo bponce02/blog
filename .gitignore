@@ -1,1 +1,26 @@
 *.sqlite3
+
+# Compiled CSS
+mysite/mysite/static/css/output.css
+
+# Tailwind CLI binary
+mysite/mysite/static/css/tailwindcss
+
+# Node modules
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Django
+*.log
+db.sqlite3
+/static/
+/media/

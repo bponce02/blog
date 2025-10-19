@@ -1,26 +1,36 @@
 {% extends "base.html" %}
 
 {% load wagtailcore_tags %}
+{% load static %}
 
 {% block body_class %}template-blogpage{% endblock %}
 
 {% block content %}
-    <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date }}</p>
-
-    <div class="intro">{{ page.intro }}</div>
-
-    {{ page.body|richtext }}
-
-    <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
-    {% with tags=page.tags.all %}
-      {% if tags %}
-        <div class="tags">
-        <h3>Tags</h3>
-        {% for tag in tags %}
-          <a href="{% slugurl 'tags' %}?tag={{ tag }}"><button type="button">{{ tag }}</button></a>
-        {% endfor %}
+    <div class="w-3/5 mx-auto py-3">
+        <div class="flex flex-row items-center relative">
+                <a href="/">
+                    <img src="{% static 'images/actual-logo-background.png' %}" alt="Logo" class="w-[100px] h-[100px] hover:opacity-50 transition-opacity cursor-pointer" >
+                </a>
+                <h1 class="font-sans text-6xl font-medium absolute left-1/2 -translate-x-1/2">{{ page.title }}</h1>
         </div>
-      {% endif %}
-    {% endwith %}
+    </div>
+    <hr class="my-5 w-3/5 mx-auto border-green-500">
+
+    <div class="w-2/5 mx-auto">
+        <div class="flex flex-row items-center justify-between">
+            <p class="font-sans text-lg font-light italic text-gray-400">{{ page.date }}</p>
+            {% if page.tags.all %}
+                <div class="flex gap-2 flex-wrap">
+                    {% for tag in page.tags.all %}
+                        <a href="{{ page.get_parent.url }}?tag={{ tag }}" class="px-3 py-1 rounded-md border border-green-500 text-green-500 hover:bg-green-500 hover:text-gray-900 text-sm transition-colors">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="rich-text font-sans text-lg font-light leading-relaxed">{{ page.body|richtext }}</div>
+
+        <div class="mt-10">
+            <a href="{{ page.get_parent.url }}" class="font-sans text-xl font-light hover:text-green-500 transition-colors">← Return to blog</a>
+        </div>
+    </div>
 {% endblock %}

@@ -18,7 +18,14 @@ class BlogIndexPage(Page):
         # Update context to include only published posts, ordered by reverse-chron
         context = super().get_context(request)
         blogpages = self.get_children().live().order_by('-first_published_at')
+        
+        # Filter by tag if provided
+        tag = request.GET.get('tag')
+        if tag:
+            blogpages = blogpages.filter(blogpage__tags__name=tag)
+        
         context['blogpages'] = blogpages
+        context['selected_tag'] = tag
         return context
 
 class BlogPageTag(TaggedItemBase):
