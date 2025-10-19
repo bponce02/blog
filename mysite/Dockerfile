@@ -2,7 +2,10 @@
 FROM python:3.12-slim-bookworm
 
 # Add user that will be used in the container.
-RUN useradd wagtail
+ARG PUID=1000
+ARG PGID=1000
+RUN groupadd -g ${PGID} wagtail && \
+    useradd -u ${PUID} -g wagtail -m wagtail
 
 # Port used by this container to serve HTTP.
 EXPOSE 8000
