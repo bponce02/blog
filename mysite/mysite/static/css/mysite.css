@@ -89,12 +89,18 @@
     padding: 0;
 }
 .rich-text blockquote {
-    border-left: 4px solid #22c55e;
-    padding-left: 1em;
+    background-color: transparent;
+    padding: 1em;
+    border-radius: 0.375rem;
+    overflow-x: auto;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    font-style: italic;
-    color: #d1d5db;
+    border: 1px solid #22c55e;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+    color: #22c55e;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 .rich-text img {
     max-width: 100%;

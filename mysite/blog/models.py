@@ -37,7 +37,11 @@ class BlogPageTag(TaggedItemBase):
 class BlogPage(Page):
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
-    body = RichTextField(blank=True)
+    body = RichTextField(
+        blank=True,
+        features=['h2', 'h3', 'h4', 'bold', 'italic', 'ol', 'ul', 'hr', 'link', 
+                  'document-link', 'image', 'embed', 'code', 'blockquote']
+    )
     
     # Add this:
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
