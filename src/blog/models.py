@@ -5,8 +5,10 @@ from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 # Add these:
 from wagtail.models import Page, Orderable
-from wagtail.fields import RichTextField
+from wagtail.fields import RichTextField, StreamField
+from wagtail import blocks
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
+from wagtailcodeblock.blocks import CodeBlock
 
 
 class BlogIndexPage(Page):
@@ -37,10 +39,15 @@ class BlogPageTag(TaggedItemBase):
 class BlogPage(Page):
     date = models.DateField("Post date")
     intro = models.CharField(max_length=250)
-    body = RichTextField(
+    body = StreamField(
+        [
+            ("paragraph", blocks.RichTextBlock(
+                features=['h2', 'h3', 'h4', 'bold', 'italic', 'ol', 'ul', 'hr', 'link',
+                          'document-link', 'image', 'embed', 'code', 'blockquote']
+            )),
+            ("code", CodeBlock(label="Code")),
+        ],
         blank=True,
-        features=['h2', 'h3', 'h4', 'bold', 'italic', 'ol', 'ul', 'hr', 'link', 
-                  'document-link', 'image', 'embed', 'code', 'blockquote']
     )
     
     # Add this:

@@ -11,4 +11,4 @@ build-css:
     npx @tailwindcss/cli -i ./src/mysite/static/css/input.css -o ./src/mysite/static/css/output.css --minify
 
 runserver:
-    cd src && uv run manage.py runserver
+    uv run src/manage.py runserver

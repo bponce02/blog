@@ -25,19 +25,20 @@
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/output.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
 
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
     </head>
 
-    
+
     <div class="bg-gray-900 text-white min-h-screen">
       <body class="{% block body_class %}{% endblock %}">
           {% wagtailuserbar %}
 
           {% block content %}{% endblock %}
+
+          <link rel="stylesheet" type="text/css" href="{% static 'css/prism-holi.css' %}">
 
           {# Global javascript #}
           <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>

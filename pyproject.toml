@@ -10,6 +10,7 @@ requires-python = ">=3.12"
 dependencies = [
     "django>=6.1.1",
     "wagtail>=8.0",
+    "wagtailcodeblock>=1.30.0.0",
 ]
 
 [project.scripts]

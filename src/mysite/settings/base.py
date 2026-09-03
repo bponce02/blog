@@ -47,7 +47,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "wagtailcodeblock",
 ]
+
+WAGTAIL_CODE_BLOCK_THEME = None
+WAGTAIL_CODE_BLOCK_LINE_NUMBERS = False
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

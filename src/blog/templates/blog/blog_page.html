@@ -16,7 +16,7 @@
     </div>
     <hr class="my-5 w-3/5 mx-auto border-green-500">
 
-    <div class="w-2/5 mx-auto">
+    <div class="max-w-3xl mx-auto px-4">
         <div class="flex flex-row items-center justify-between">
             <p class="font-sans text-lg font-light italic text-gray-400">{{ page.date }}</p>
             {% if page.tags.all %}
@@ -27,7 +27,9 @@
                 </div>
             {% endif %}
         </div>
-        <div class="rich-text font-sans text-lg font-light leading-relaxed">{{ page.body|richtext }}</div>
+        <div class="prose prose-invert prose-lg max-w-none font-sans font-light [--tw-prose-invert-body:#fff] prose-strong:font-semibold [&_b]:font-semibold prose-headings:font-semibold prose-h1:text-[2.25em] prose-h2:text-[1.875em] prose-h3:text-[1.5em] prose-strong:text-white prose-a:text-green-500 prose-a:no-underline hover:prose-a:underline prose-img:block prose-img:mx-auto leading-relaxed prose-blockquote:text-green-500 prose-blockquote:border-l-green-500 prose-blockquote:font-normal prose-code:text-green-300 prose-code:bg-gray-800 prose-code:font-normal prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none">
+            {% for block in page.body %}{% include_block block %}{% endfor %}
+        </div>
 
         <div class="mt-10">
             <a href="{{ page.get_parent.url }}" class="font-sans text-xl font-light hover:text-green-500 transition-colors">← Return to blog</a>
