@@ -1,10 +1,7 @@
 *.sqlite3
 
 # Compiled CSS
-mysite/mysite/static/css/output.css
-
-# Tailwind CLI binary
-mysite/mysite/static/css/tailwindcss
+src/mysite/static/css/output.css
 
 # Node modules
 node_modules/
