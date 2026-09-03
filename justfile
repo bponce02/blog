@@ -12,3 +12,9 @@ build-css:
 
 runserver:
     uv run src/manage.py runserver
+
+migrate:
+    uv run src/manage.py migrate
+
+makemigrations:
+    uv run src/manage.py makemigrations

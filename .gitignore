@@ -20,4 +20,4 @@ ENV/
 *.log
 db.sqlite3
 /static/
-/media/
+src/media/
