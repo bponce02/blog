@@ -1,0 +1,7 @@
+{% load wagtailimages_tags %}
+<figure>
+    {% image value.image width-800 %}
+    {% if value.caption %}
+        <figcaption class="text-center">{{ value.caption }}</figcaption>
+    {% endif %}
+</figure>

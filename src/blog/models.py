@@ -9,6 +9,17 @@ from wagtail.fields import RichTextField, StreamField
 from wagtail import blocks
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtailcodeblock.blocks import CodeBlock
+from wagtail.images.blocks import ImageBlock
+
+
+class CaptionedImageBlock(blocks.StructBlock):
+    image = ImageBlock(required=True)
+    caption = blocks.CharBlock(required=False, help_text="Shown below the image")
+
+    class Meta:
+        icon = "image"
+        label = "Image"
+        template = "blog/blocks/captioned_image.html"
 
 
 class BlogIndexPage(Page):
@@ -46,6 +57,7 @@ class BlogPage(Page):
                           'document-link', 'image', 'embed', 'code', 'blockquote']
             )),
             ("code", CodeBlock(label="Code")),
+            ("image", CaptionedImageBlock()),
         ],
         blank=True,
     )
